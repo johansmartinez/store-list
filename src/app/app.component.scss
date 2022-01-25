@@ -1,15 +1,35 @@
-.box{
-    height: 200px;
-    width: 200px;
-    overflow:auto;
-    background:red;
+.grid--products {
+    display: flex;
+    flex-direction: column;
+    div {
+        img {
+            width: 95vw;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 4px 3px 10px -3px rgba(138,138,138,0.96);
+        }
+        h2, p {
+            margin: 0;
+        }
+    }
 }
 
-.rojo{
-    color: red;
+@media screen and (min-width : 768px) {
+    .grid--products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 15px;
+        div {
+            img {
+                width: 100%;
+                height: 80%;
+                border-radius: 10px;
+                box-shadow: 4px 3px 10px -3px rgba(138,138,138,0.96);
+            }
+            h2, p {
+                margin: 0;
+            }
+        }
+    }
 }
 
-.p-img{
-    width: 200px;
-    height: 200px;
-}

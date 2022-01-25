@@ -7,12 +7,12 @@ import { Product} from './product.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  name = 'nezzy';
-  age = 14;
-  image= 'https://cdn.icon-icons.com/icons2/1369/PNG/512/-person_90382.png';
-  btnDisable=true;
-  array: string[]=[ '🐮','🦓', '🐸','🐼','🐨'];
-  newitem:string ='';
+  user={
+    name:'',
+    email:'',
+    password:'',
+  }
+
   products: Product[]=[
     {
       name:'Cebolla',
@@ -29,27 +29,25 @@ export class AppComponent {
       price:4000,
       image:'https://carulla.vtexassets.com/arquivos/ids/3100616/Arroz-Fortificado-Roa-Bolsa-X-5000g-722262_a.jpg?v=637469952144600000'
     },
+    {
+      name:'leche',
+      price:3000,
+      image:'https://ecommerce.productoselrecreo.com/backend/admin/backend/web/archivosDelCliente/items/images/20210109090444-Productos-Leche--LECHE-ENTERA---900-mL-28202101090904449811.jpg'
+    },
+    {
+      name:'Jabón',
+      price:2300,
+      image:'https://img.freepik.com/psd-gratis/paquete-caja-envoltura-jabon-jabon-barra-aislado-sobre-fondo-azul_70626-11994.jpg?size=626&ext=jpg'
+    },
+    {
+      name:'donas',
+      price:6000,
+      image:'https://previews.123rf.com/images/dafna93/dafna931701/dafna93170100015/70228327-ilustraci%C3%B3n-vectorial-de-color-rosa-dona-glaseado-de-color-rosa-con-polvo-azul.jpg'
+    },
   ];
 
-  toggleBtn(){
-    this.btnDisable=!this.btnDisable
+  onSubmit(){
+    console.log(this.user);
   }
 
-  scrollbox(event:Event){
-    const element = event.target as HTMLElement;
-    console.log(element.scrollTop)
-  }
-  changeName(event:Event){
-    const element = event.target as HTMLInputElement;
-    this.name=element.value;
-  }
-
-  addItem(){
-    this.array.push(this.newitem);
-    this.newitem="";
-  }
-
-  deleteItem(index:number){
-    this.array.splice(index,1);
-  }
 }

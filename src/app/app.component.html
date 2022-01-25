@@ -1,50 +1,29 @@
-<h1>[ngSwitch]</h1>
-<div [ngSwitch]="newitem">
-  <input type="text" [(ngModel)]="newitem">
-  <p *ngSwitchCase="'alberto'">hola soy alberto</p>
-  <p *ngSwitchCase="'juan'">hola soy juan</p>
-  <p *ngSwitchCase="'andres'">hola soy andres</p>
-  <p *ngSwitchDefault> no hay match</p>
-</div>
-<hr>
-<h1>ngFor Objs</h1>
-<div>
-  <div *ngFor="let product of products">
-    <img class="p-img" [src]="product.image">
-    <h3>{{product.name}}</h3>
-    <p>precio: ${{product.price}}</p>
+<h1>Formulario</h1>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <div class="input-group">
+    <label for="name">Nombre</label>
+    <input type="text" required id="name" name="name" [(ngModel)]="user.name">
+    <p>Mensaje de error</p>
   </div>
-</div>
+  <div class="input-group">
+    <label for="email">Correo</label>
+    <input type="email" required id="email" name="email" [(ngModel)]="user.email">
+    <p>Mensaje de error</p>
+  </div>
+  <div class="input-group">
+    <label for="password">Nombre</label>
+    <input type="password" required id="password" name="password" [(ngModel)]="user.password">
+    <p>Mensaje de error</p>
+  </div>
+  <button type="submit">ENVIAR</button>
+  <button type="button"> ACCION</button>
+</form>
 <hr>
-<h1>ngFor</h1>
-<input type="text" [(ngModel)]="newitem">
-<button (click)="addItem()">Agregar item</button>
-<ul>
-  <li *ngFor="let element of array; index as i">{{i}}) {{element}}
-    <button (click)="deleteItem(i)">X</button>
-  </li>
-</ul>
-<hr>
-<h1>Eventos</h1>
-<button [disabled]="btnDisable">EEEEEEEE</button>
-<button (click)="toggleBtn()">{{(btnDisable)?'ACTIVAR':'DESACTIVAR'}}</button>
-<hr>
-<h1>*ngIf</h1>
-<input type="text" #inputname="ngModel" required [(ngModel)]="name">
-<p class="rojo" *ngIf="!inputname.valid;else elseP">por favor rellene el campo</p>
-<ng-template #elseP>
-  <p>Si estoy bien XD</p>
-</ng-template>
+<div class="grid--products">
+  <div *ngFor="let product of products">
+    <h2>{{product.name}}</h2>
+    <img [src]="product.image">
+    <p>{{product.price}}</p>
+  </div>
 
-<p>Validado= {{ inputname.valid }}</p>
-<div class="box" (scroll)="scrollbox($event)">
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis inventore odio optio vel minima maiores voluptatibus, beatae quo, at quos minus in numquam aut dolor debitis dicta consequatur nisi ratione!</p>
 </div>
-<hr>
-<h1>Propiedades</h1>
-<button [disabled]="btnDisable">EEEEEEEE</button>
-<hr>
-<h1>hola mundo</h1>
-<h2>{{'hola mundo'}}</h2>
-<p>soy {{name}}</p>
-<img src={{image}}>
