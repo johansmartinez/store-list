@@ -1,11 +1,5 @@
-<input type="text" [(ngModel)]="children">
-<app-img (imgLoaded)="onImgLoaded($event)" [img]="children" ></app-img>
-<hr>
 <div class="grid--products">
-  <div *ngFor="let product of products">
-    <h2>{{product.name}}</h2>
-    <img [src]="product.image">
-    <p>{{product.price}}</p>
-  </div>
-
+    <div *ngFor="let p of products">
+        <app-product [product]="p"></app-product>
+    </div>
 </div>
