@@ -7,6 +7,7 @@ import { Product} from './product.model'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  children:string='';
   user={
     name:'',
     email:'',
@@ -48,6 +49,10 @@ export class AppComponent {
 
   onSubmit(){
     console.log(this.user);
+  }
+
+  onImgLoaded(img:string){
+    alert(`La imagen ${img} se cargo completamente!`)
   }
 
 }

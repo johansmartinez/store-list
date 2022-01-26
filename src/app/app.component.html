@@ -1,23 +1,5 @@
-<h1>Formulario</h1>
-<form #form="ngForm" (ngSubmit)="onSubmit()">
-  <div class="input-group">
-    <label for="name">Nombre</label>
-    <input type="text" required id="name" name="name" [(ngModel)]="user.name">
-    <p>Mensaje de error</p>
-  </div>
-  <div class="input-group">
-    <label for="email">Correo</label>
-    <input type="email" required id="email" name="email" [(ngModel)]="user.email">
-    <p>Mensaje de error</p>
-  </div>
-  <div class="input-group">
-    <label for="password">Nombre</label>
-    <input type="password" required id="password" name="password" [(ngModel)]="user.password">
-    <p>Mensaje de error</p>
-  </div>
-  <button type="submit">ENVIAR</button>
-  <button type="button"> ACCION</button>
-</form>
+<input type="text" [(ngModel)]="children">
+<app-img (imgLoaded)="onImgLoaded($event)" [img]="children" ></app-img>
 <hr>
 <div class="grid--products">
   <div *ngFor="let product of products">
