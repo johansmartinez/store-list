@@ -5,8 +5,7 @@ import {Product} from '../models/product.model';
   providedIn: 'root'
 })
 export class StoreService {
-  shoppingCart: Product[]=[];
-  total:Number=0;
+  private shoppingCart: Product[]=[];
   constructor() { }
 
   addProductToShoppingCart(product:Product){
@@ -15,5 +14,9 @@ export class StoreService {
 
   getTotal(){
     return this.shoppingCart.reduce((sum,item) =>sum+item.price,0);
+  }
+
+  getShoppingCart(){
+    return this.shoppingCart;
   }
 }
