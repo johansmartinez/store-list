@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
     email:'',
     password:'',
   }
+  year:Date=new Date("2/8/2021");
   myShoppingCart:Product[]=[];
   total:Number=0;
 

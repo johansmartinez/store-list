@@ -1,4 +1,4 @@
-<h2>{{product.title}}</h2>
+<h2>{{product.title | reverse}}</h2>
 <img [src]="product.image" alt="">
 <p>$ {{product.price}}</p>
 <button (click)="addProductToCart()">Add</button>
