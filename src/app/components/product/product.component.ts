@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { HttpClient } from '@angular/common/http';
+import SwiperCore from 'swiper';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',

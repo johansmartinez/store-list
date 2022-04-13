@@ -6,7 +6,17 @@
 <div [class.active]="showProductDetail" class="product-detail">
     <button (click)="toggleDetails()">close</button>
     <h2>{{product.title}}</h2>
-    <img  [src]="product.images[0]" alt="">
+    <p *ngFor="let img of product.images">
+        {{img}}
+    </p>
+    <swiper
+      [slidesPerView]="1"
+      [spaceBetween]="50"
+    >
+      <ng-template swiperSlide>Slide 1</ng-template>
+      <ng-template swiperSlide>Slide 2</ng-template>
+      <ng-template swiperSlide>Slide 3</ng-template>
+    </swiper>
     <p>{{product.description}}</p>
     <p>$ {{product.price}}</p>
 </div>
